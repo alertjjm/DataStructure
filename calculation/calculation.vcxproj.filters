@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MyCalculation.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="InfixToPostfix.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ListBaseStack_my.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="InfixToPostfixMain.c">
+    <ClCompile Include="ListBaseStack.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="InfixToPostfix.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="ListBaseStack_my.h">
+    <ClInclude Include="ListBaseStack.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
