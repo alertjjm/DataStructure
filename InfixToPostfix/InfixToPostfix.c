@@ -64,7 +64,7 @@ void ConvToRPNExp(char exp[]) {
 				else {
 					if (whoisprecede(SPeek(&stack), token) >= 0) {
 						SPush(&stack, token);
-					}
+					}	
 					else {
 						while (!SIsEmpty(&stack)) {
 							convExp[idx++] = SPop(&stack);
@@ -82,4 +82,45 @@ void ConvToRPNExp(char exp[]) {
 	convExp[idx] = '\0';
 	strcpy(exp, convExp);
 }
+int EvalInfixExp(char exp[]) {
+	Stack stack;
+	StackInit(&stack);
 
+	int len = strlen(exp);
+	int result;
+	int op1, op2;
+	for (int i = 0; i < len; i++) {
+		char t = exp[i];
+		if (isdigit(t)) {
+			SPush(&stack, t);
+		}
+		else {
+			op1 = SPop(&stack)-'0';
+			op2 = SPop(&stack)-'0';
+			switch (t){
+			case '*':
+				result = op1*op2;
+				SPush(&stack, result+'0');
+				break;
+			case '/':
+				result = op2 / op1;
+				SPush(&stack, result + '0');
+				break;
+			case '+':
+				result = op1 + op2;
+				SPush(&stack, result + '0');
+				break;
+			case '-':
+				result = op2 - op1;
+				SPush(&stack, result + '0');
+				break;
+			}
+		}
+	}
+	while(!SIsEmpty(&stack))
+	{
+		Data d = SPop(&stack);
+	}
+
+	return result;
+}
