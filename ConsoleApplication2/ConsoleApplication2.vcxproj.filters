@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="asdf.c">
+    <ClCompile Include="..\..\김승태자료구조\중간\20175164+20171803_4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
